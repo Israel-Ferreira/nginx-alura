@@ -2,12 +2,12 @@ version: '3.8'
 
 services:
   nginx-server:
-    image: nginx:latest
+    build:
+      context: .
     container_name: servidor-nginx
 
     volumes:
       - ./dist/html:/usr/share/nginx/html:ro
-      - ./nginx/conf.d:/etc/nginx/conf.d:ro
 
     ports:
       - 8080:80
